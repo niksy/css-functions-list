@@ -1,4 +1,10 @@
+/// <reference lib="dom" />
+
+/* globals Document */
+/* eslint-disable unicorn/prefer-spread */
+
 import path from 'path';
+import { URL } from 'url';
 import fetch from 'isomorphic-unfetch';
 import { JSDOM } from 'jsdom';
 import writeJsonFile from 'write-json-file';
@@ -6,28 +12,31 @@ import writeJsonFile from 'write-json-file';
 const references = [
 	{
 		url: 'https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix',
-		transform: (document) => {
-			let list = document.querySelectorAll('#css_prefixes + div li code');
-			list = [...list].map((node) => node.textContent);
+		transform: (/** @type {Document} */ document) => {
+			const list = Array.from(
+				document.querySelectorAll('#css_prefixes + div li code')
+			).map((node) => node.textContent || '');
 			return list;
 		}
 	},
 	{
 		url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions',
-		transform: (document) => {
-			let list = document.querySelectorAll('.main-page-content dt code');
-			list = [...list]
-				.map((node) => node.textContent)
+		transform: (/** @type {Document} */ document) => {
+			const list = Array.from(
+				document.querySelectorAll('.main-page-content dt code')
+			)
+				.map((node) => node.textContent || '')
 				.map((name) => name.replace('()', ''));
 			return list;
 		}
 	},
 	{
 		url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/Reference',
-		transform: (document) => {
-			let list = document.querySelectorAll('#index + div .index li code');
-			list = [...list]
-				.map((node) => node.textContent)
+		transform: (/** @type {Document} */ document) => {
+			const list = Array.from(
+				document.querySelectorAll('#index + div .index li code')
+			)
+				.map((node) => node.textContent || '')
 				.filter((name) => /^[^:]\S+\(\)$/.test(name))
 				.map((name) => name.replace('()', ''));
 			return list;
@@ -48,14 +57,22 @@ async function main() {
 		} = new JSDOM(markup);
 		return references[index].transform(document);
 	});
-	let results = [...new Set([].concat(...functions))].sort();
-	results = [
-		...results,
+
+	/** @type {string[]} */
+	let results = [];
+	results = [...new Set(results.concat(...functions))].sort();
+
+	const combinedResults = [
+		results,
 		...prefixes.map((prefix) => results.map((name) => `${prefix}${name}`))
 	];
-	results = [].concat(...results);
+
+	/** @type {string[]} */
+	let flattenedResults = [];
+	flattenedResults = flattenedResults.concat(...combinedResults);
+
 	const filename = new URL('index.json', import.meta.url).pathname;
-	await writeJsonFile(filename, results);
+	await writeJsonFile(filename, flattenedResults);
 	console.log('Done!');
 }
 

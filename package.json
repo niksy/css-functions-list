@@ -18,6 +18,7 @@
   },
   "main": "cjs/index.js",
   "module": "esm/index.js",
+  "types": "esm/index.d.ts",
   "directories": {
     "test": "test"
   },
@@ -38,9 +39,14 @@
     "test:watch": "npm test -- --watch",
     "build": "rollup --config rollup.config.js",
     "module-check": "node -e 'require(\"css-functions-list\");' && node --input-type=module -e 'import \"css-functions-list\";'",
-    "prepublishOnly": "npm run build && npm run module-check"
+    "prepublishOnly": "npm run build && npm run lint:types && npm run module-check",
+    "lint:types": "tsc"
   },
   "devDependencies": {
+    "@types/jsdom": "^16.2.13",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^16.3.0",
+    "@types/node-fetch": "^2.5.12",
     "changelog-verify": "^1.1.2",
     "cpy": "^8.1.2",
     "eslint": "^7.31.0",
@@ -54,6 +60,7 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-unicorn": "^31.0.0",
     "esm": "^3.0.51",
+    "execa": "^5.1.1",
     "github-release-from-changelog": "^2.1.1",
     "husky": "^4.3.0",
     "isomorphic-unfetch": "^3.1.0",
@@ -63,6 +70,7 @@
     "np": "^6.5.0",
     "prettier": "^2.1.2",
     "rollup": "^2.32.1",
+    "typescript": "^4.3.5",
     "version-changelog": "^3.1.1",
     "write-json-file": "^4.3.0"
   },
