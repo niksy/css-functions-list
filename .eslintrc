@@ -1,9 +1,9 @@
 {
 	"root": true,
 	"extends": [
-		"eslint-config-niksy",
-		"eslint-config-niksy/typescript",
-		"eslint-config-niksy/next",
+		"eslint-config-nitpick",
+		"eslint-config-nitpick/typescript",
+		"eslint-config-nitpick/next",
 		"eslint-config-prettier"
 	],
 	"plugins": ["eslint-plugin-prettier"],
@@ -13,17 +13,11 @@
 	"overrides": [
 		{
 			"files": ["rollup.config.js"],
-			"env": {
-				"node": true,
-				"es6": true
-			},
 			"parserOptions": {
 				"sourceType": "script"
 			},
-			"plugins": ["eslint-plugin-unicorn"],
 			"rules": {
-				"no-console": 0,
-				"unicorn/numeric-separators-style": 0
+				"no-console": 0
 			}
 		}
 	]

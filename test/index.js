@@ -2,7 +2,7 @@
 
 import assert from 'assert';
 import { promises as fs } from 'fs';
-import function_ from '../index';
+import function_ from '../index.js';
 
 it('should export path to JSON file', async function () {
 	assert.ok(function_.includes('index.json'));

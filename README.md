@@ -58,7 +58,7 @@ MIT © [Ivan Nikolić](http://ivannikolic.com)
 
 <!-- prettier-ignore-start -->
 
-[ci]: https://travis-ci.com/niksy/css-functions-list
-[ci-img]: https://travis-ci.com/niksy/css-functions-list.svg?branch=master
+[ci]: https://github.com/niksy/css-functions-list/actions?query=workflow%3ACI
+[ci-img]: https://github.com/niksy/css-functions-list/workflows/CI/badge.svg?branch=master
 
 <!-- prettier-ignore-end -->
