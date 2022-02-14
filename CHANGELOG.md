@@ -2,6 +2,14 @@
 
 ## [Unreleased][]
 
+### Fixed
+
+-   Use `fileURLToPath` for location resolve
+
+### Added
+
+-   Windows to CI matrix
+
 ## [3.0.0][] - 2022-02-03
 
 ### Changed
