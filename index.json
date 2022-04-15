@@ -53,6 +53,8 @@
 	"min",
 	"minmax",
 	"mod",
+	"oklab",
+	"oklch",
 	"opacity",
 	"ornaments",
 	"paint",
