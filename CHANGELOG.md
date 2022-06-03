@@ -2,6 +2,11 @@
 
 ## [Unreleased][]
 
+### Added
+
+-   Add OKLCH and OKLab functions
+    ([#4](https://github.com/niksy/css-functions-list/pull/4))
+
 ## [3.0.1][] - 2022-02-14
 
 ### Fixed
