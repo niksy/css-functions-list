@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+## [3.1.0][] - 2022-06-03
+
 ### Added
 
 -   Add OKLCH and OKLab functions
@@ -37,5 +39,6 @@
 
 [2.0.0]: https://github.com/niksy/css-functions-list/tree/v2.0.0
 [3.0.0]: https://github.com/niksy/css-functions-list/tree/v3.0.0
-[unreleased]: https://github.com/niksy/css-functions-list/compare/v3.0.1...HEAD
 [3.0.1]: https://github.com/niksy/css-functions-list/tree/v3.0.1
+[unreleased]: https://github.com/niksy/css-functions-list/compare/v3.1.0...HEAD
+[3.1.0]: https://github.com/niksy/css-functions-list/tree/v3.1.0
