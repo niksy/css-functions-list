@@ -28,18 +28,18 @@ const references = [
 				.map((node) => node.textContent || '')
 				.map((name) => name.replace('()', ''));
 
-			const additinal = [];
+			const additional = [];
 			for (const name of list) {
 				if (name.endsWith('X')) {
-					additinal.push(name.replace(/X$/, 'x'));
+					additional.push(name.replace(/X$/, 'x'));
 				} else if (name.endsWith('Y')) {
-					additinal.push(name.replace(/Y$/, 'y'));
+					additional.push(name.replace(/Y$/, 'y'));
 				} else if (name.endsWith('Z')) {
-					additinal.push(name.replace(/Z$/, 'z'));
+					additional.push(name.replace(/Z$/, 'z'));
 				}
 			}
 
-			return list.concat(additinal);
+			return list.concat(additional);
 		}
 	},
 	{
