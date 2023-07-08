@@ -27,7 +27,19 @@ const references = [
 			)
 				.map((node) => node.textContent || '')
 				.map((name) => name.replace('()', ''));
-			return list;
+
+			const additinal = [];
+			for (const name of list) {
+				if (name.endsWith('X')) {
+					additinal.push(name.replace(/X$/, 'x'));
+				} else if (name.endsWith('Y')) {
+					additinal.push(name.replace(/Y$/, 'y'));
+				} else if (name.endsWith('Z')) {
+					additinal.push(name.replace(/Z$/, 'z'));
+				}
+			}
+
+			return list.concat(additinal);
 		}
 	},
 	{
