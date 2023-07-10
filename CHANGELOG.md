@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+## [3.2.0][] - 2023-07-10
+
 ### Changed
 
 -   Update with latest function definitions
@@ -47,3 +49,5 @@
 [3.0.0]: https://github.com/niksy/css-functions-list/tree/v3.0.0
 [3.0.1]: https://github.com/niksy/css-functions-list/tree/v3.0.1
 [3.1.0]: https://github.com/niksy/css-functions-list/tree/v3.1.0
+[Unreleased]: https://github.com/niksy/css-functions-list/compare/v3.2.0...HEAD
+[3.2.0]: https://github.com/niksy/css-functions-list/tree/v3.2.0
