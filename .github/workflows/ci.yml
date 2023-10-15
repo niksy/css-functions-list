@@ -4,14 +4,11 @@ on:
   - pull_request
 jobs:
   Test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version:
-          - 12.22
-        os:
-          - ubuntu-latest
-          - windows-latest
+          - 16
     steps:
       - name: Clone repository
         uses: actions/checkout@v2

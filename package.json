@@ -34,11 +34,11 @@
     "release": "np --no-release-draft",
     "version": "if [ $(git rev-parse --abbrev-ref HEAD) == 'master' ]; then sed -i '' '/\\[unreleased\\]:/d' CHANGELOG.md && version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md; else echo; fi",
     "postpublish": "GITHUB_TOKEN=$GITHUB_RELEASE_TOKEN github-release-from-changelog",
-    "lint": "eslint \"{index,lib/**/*,test/**/*,generate-list}.js\"",
-    "test": "mocha --require esm \"test/**/*.js\"",
+    "lint": "eslint '{index,lib/**/*,test/**/*,generate-list}.js'",
+    "test": "mocha --require esm 'test/**/*.js'",
     "test:watch": "npm test -- --watch",
     "build": "rollup --config rollup.config.js",
-    "module-check": "node -e \"require('css-functions-list');\" && node --input-type=module -e \"import 'css-functions-list';\"",
+    "module-check": "node -e 'require(\"css-functions-list\");' && node --input-type=module -e 'import \"css-functions-list\";'",
     "prepublishOnly": "npm run build",
     "lint:types": "tsc",
     "prerelease": "npm run lint && npm run lint:types && npm run build && npm run module-check"
@@ -61,7 +61,7 @@
     "isomorphic-unfetch": "^3.1.0",
     "jsdom": "^17.0.0",
     "lint-staged": "^10.4.2",
-    "mocha": "^8.4.0",
+    "mocha": "^9.1.3",
     "np": "^7.6.0",
     "prettier": "^2.4.0",
     "rollup": "^2.32.1",
@@ -70,7 +70,7 @@
     "write-json-file": "^4.3.0"
   },
   "engines": {
-    "node": ">=12.22"
+    "node": ">=12 || >=16"
   },
   "keywords": [
     "css",
