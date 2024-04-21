@@ -157,11 +157,24 @@ const references = [
 			return functions;
 		};
 	}),
-	// Legacy values
+	// Experimental, legacy and removed functions
 	() => {
-		return ['-webkit-gradient'].map((value) =>
-			value.replace(new RegExp(prefixes.join('|')), '')
-		);
+		return [
+			// https://www.webkit.org/blog/175/introducing-css-gradients/
+			'-webkit-gradient',
+			'color-stop',
+			'from',
+			'to',
+			// https://chromestatus.com/feature/5124922471874560
+			'anchor',
+			'anchor-size',
+			// https://developer.mozilla.org/en-US/docs/Web/CSS/font-palette/palette-mix
+			'palette-mix',
+			// https://web.archive.org/web/20221206074145/https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsla
+			'hsla',
+			// https://web.archive.org/web/20221222183535/https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgba
+			'rgba'
+		].map((value) => value.replace(new RegExp(prefixes.join('|')), ''));
 	}
 ];
 
