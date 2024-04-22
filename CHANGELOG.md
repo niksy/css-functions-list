@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+-   Add additional function references
+
 ## [3.2.1][] - 2023-10-15
 
 ### Changed
