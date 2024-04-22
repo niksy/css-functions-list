@@ -14,6 +14,7 @@ Data sources are:
     [general CSS features](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference).
 -   MDN
     [browser compatibility data for CSS functions](https://github.com/mdn/browser-compat-data/tree/main/css/types)
+-   Manually maintained experimental, legacy and removed functions
 
 ## Install
 
