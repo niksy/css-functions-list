@@ -92,6 +92,7 @@ const references = [
 		'blend-mode.json',
 		'calc-constant.json',
 		'calc.json',
+		'calc-size.json',
 		'clamp.json',
 		'color.json',
 		'cos.json',
