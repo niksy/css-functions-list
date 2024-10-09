@@ -2,6 +2,9 @@
 
 ## [Unreleased][]
 
+-   Add `calc-size` and `shape` function
+-   Filter invalid functions
+
 ## [3.2.2][] - 2024-04-22
 
 -   Add additional function references
