@@ -186,7 +186,11 @@ async function main() {
 
 	/** @type {string[]} */
 	let results = [];
-	results = [...new Set(results.concat(...functions))].sort();
+	results = [...new Set(results.concat(...functions))]
+		.sort()
+		.filter((result) => {
+			return !['<url>'].includes(result);
+		});
 
 	const combinedResults = [
 		results,
