@@ -3,6 +3,5 @@ node_modules/
 package-lock.json
 yarn.lock
 npm-debug.log
-cjs/
-esm/
+dist/
 !test/fixtures/node_modules/

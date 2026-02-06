@@ -1,7 +1,5 @@
-/* eslint-disable import/dynamic-import-chunkname */
-
-import assert from 'assert';
-import { promises as fs } from 'fs';
+import assert from 'node:assert';
+import { promises as fs } from 'node:fs';
 import function_ from '../index.js';
 
 it('should export path to JSON file', async function () {

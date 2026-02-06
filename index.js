@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/enforce-node-protocol-usage, unicorn/prefer-node-protocol
 import { URL, fileURLToPath } from 'url';
 
 /**

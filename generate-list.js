@@ -3,10 +3,10 @@
 /* globals Document */
 /* eslint-disable unicorn/prefer-spread */
 
-import { URL } from 'url';
+import { URL } from 'node:url';
 import fetch from 'isomorphic-unfetch';
 import { JSDOM } from 'jsdom';
-import writeJsonFile from 'write-json-file';
+import { writeJsonFile } from 'write-json-file';
 
 const prefixes = ['-webkit-', '-moz-', '-o-', '-ms-'];
 const excludes = ['jump-</code> keywords for <code>steps'];
@@ -43,9 +43,7 @@ const references = [
 		const {
 			window: { document }
 		} = new JSDOM(markup);
-		const list = Array.from(
-			document.querySelectorAll('.main-page-content dt code')
-		)
+		const list = Array.from(document.querySelectorAll('.main-page-content dt code'))
 			.map((node) => node.textContent || '')
 			.map((name) => name.replace('()', ''));
 
@@ -63,16 +61,12 @@ const references = [
 		return list.concat(additional);
 	},
 	async () => {
-		const response = await fetch(
-			'https://developer.mozilla.org/en-US/docs/Web/CSS/Reference'
-		);
+		const response = await fetch('https://developer.mozilla.org/en-US/docs/Web/CSS/Reference');
 		const markup = await response.text();
 		const {
 			window: { document }
 		} = new JSDOM(markup);
-		const list = Array.from(
-			document.querySelectorAll('#index + div .index li code')
-		)
+		const list = Array.from(document.querySelectorAll('#index + div .index li code'))
 			.map((node) => node.textContent || '')
 			.filter((name) => /^[^:]\S+\(\)$/.test(name))
 			.map((name) => name.replace('()', ''));
@@ -147,9 +141,7 @@ const references = [
 			fields.forEach((field) => {
 				const description = field?.description ?? '';
 				const [, match] = description.match(
-					new RegExp(
-						`<code>(?:${prefixes.join('|')})?(.+)\\(\\)<\\/code>`
-					)
+					new RegExp(`<code>(?:${prefixes.join('|')})?(.+)\\(\\)<\\/code>`)
 				) ?? [null, ''];
 				if (match && !excludes.includes(match)) {
 					functions.push(match);
@@ -180,17 +172,13 @@ const references = [
 ];
 
 async function main() {
-	const functions = await Promise.all(
-		references.map((reference) => reference())
-	);
+	const functions = await Promise.all(references.map((reference) => reference()));
 
 	/** @type {string[]} */
 	let results = [];
-	results = [...new Set(results.concat(...functions))]
-		.sort()
-		.filter((result) => {
-			return !['<url>'].includes(result);
-		});
+	results = [...new Set(results.concat(...functions))].sort().filter((result) => {
+		return !['<url>'].includes(result);
+	});
 
 	const combinedResults = [
 		results,
