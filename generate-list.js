@@ -76,6 +76,8 @@ const references = [
 		'-moz-image-rect.json',
 		'abs.json',
 		'acos.json',
+		'anchor-size.json',
+		'anchor.json',
 		'angle-percentage.json',
 		'angle.json',
 		'asin.json',
@@ -84,21 +86,22 @@ const references = [
 		'attr.json',
 		'basic-shape.json',
 		'blend-mode.json',
-		'calc-constant.json',
-		'calc.json',
+		'calc-keyword.json',
 		'calc-size.json',
+		'calc.json',
 		'clamp.json',
 		'color.json',
+		'corner-shape-value.json',
 		'cos.json',
 		'counter.json',
 		'counters.json',
 		'dimension.json',
+		'dynamic-range-limit-mix.json',
 		'easing-function.json',
+		'env.json',
 		'exp.json',
 		'filter-function.json',
 		'flex.json',
-		'frequency-percentage.json',
-		'frequency.json',
 		'global_keywords.json',
 		'hypot.json',
 		'image.json',
@@ -115,21 +118,28 @@ const references = [
 		'percentage.json',
 		'position.json',
 		'pow.json',
+		'progress.json',
+		'random.json',
 		'ratio.json',
 		'ray.json',
 		'rem.json',
 		'resolution.json',
 		'round.json',
 		'shape.json',
+		'sibling-count.json',
+		'sibling-index.json',
 		'sign.json',
 		'sin.json',
 		'sqrt.json',
 		'string.json',
+		'superellipse.json',
 		'tan.json',
-		'time-percentage.json',
+		'text-edge.json',
 		'time.json',
 		'transform-function.json',
-		'url.json'
+		'type.json',
+		'url.json',
+		'var.json'
 	].map((compatResource) => {
 		return async () => {
 			const response = await fetch(
@@ -141,7 +151,7 @@ const references = [
 			fields.forEach((field) => {
 				const description = field?.description ?? '';
 				const [, match] = description.match(
-					new RegExp(`<code>(?:${prefixes.join('|')})?(.+)\\(\\)<\\/code>`)
+					new RegExp(`\`(?:${prefixes.join('|')})?([\\w\\d-]+)\\(\\)\``)
 				) ?? [null, ''];
 				if (match && !excludes.includes(match)) {
 					functions.push(match);
@@ -166,7 +176,48 @@ const references = [
 			// https://web.archive.org/web/20221206074145/https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsla
 			'hsla',
 			// https://web.archive.org/web/20221222183535/https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgba
-			'rgba'
+			'rgba',
+			'annotation',
+			'character-variant',
+			'color-contrast',
+			'conic-gradient',
+			'device-cmyk',
+			'fit-content',
+			'format',
+			'image',
+			'layer',
+			'leader',
+			'linear-gradient',
+			'local',
+			'minmax',
+			'ornaments',
+			'radial-gradient',
+			'repeat',
+			'repeating-conic-gradient',
+			'repeating-linear-gradient',
+			'repeating-radial-gradient',
+			'reversed',
+			'rotatex',
+			'rotatey',
+			'rotatez',
+			'scalex',
+			'scaley',
+			'scalez',
+			'scroll',
+			'selector',
+			'skewx',
+			'skewy',
+			'styleset',
+			'stylistic',
+			'swash',
+			'symbols',
+			'target-counter',
+			'target-counters',
+			'target-text',
+			'translatex',
+			'translatey',
+			'translatez',
+			'view'
 		].map((value) => value.replace(new RegExp(prefixes.join('|')), ''));
 	}
 ];
