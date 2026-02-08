@@ -168,9 +168,15 @@ const references = [
 			'color-stop',
 			'from',
 			'to',
-			// https://chromestatus.com/feature/5124922471874560
-			'anchor',
-			'anchor-size',
+			// https://drafts.csswg.org/css-values-5/#if-notation
+			'if',
+			'media',
+			'style',
+			'supports',
+			// https://www.antenna.co.jp/AHF/help/en/ahf-css6.html#css3-functions
+			'content',
+			'running',
+			'string',
 			// https://developer.mozilla.org/en-US/docs/Web/CSS/font-palette/palette-mix
 			'palette-mix',
 			// https://web.archive.org/web/20221206074145/https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsla
