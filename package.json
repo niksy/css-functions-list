@@ -7,13 +7,11 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
       "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./index.json": {
-      "import": "./dist/index.json"
-    },
+    "./index.json": "./dist/index.json",
     "./package.json": "./package.json"
   },
   "main": "dist/index.cjs",

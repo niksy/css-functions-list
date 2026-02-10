@@ -2,6 +2,10 @@
 
 ## [Unreleased][]
 
+### Changed
+
+- Simplify and adjust package file references
+
 ## [3.3.2][] - 2026-02-10
 
 ### Fixed
