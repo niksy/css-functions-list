@@ -27,8 +27,8 @@
     "README.md"
   ],
   "scripts": {
-    "build": "rolldown --config rolldown.config.js",
-    "generate-list": "node generate-list.js && cp index.json dist/index.json",
+    "build": "rolldown --config rolldown.config.js && cp index.json dist/index.json",
+    "generate-list": "node generate-list.js",
     "lint": "eslint '{index,lib/**/*,test/**/*,generate-list}.{js,cjs}'",
     "lint:types": "tsc",
     "module-check": "node -e 'require(\"css-functions-list\");' && node --input-type=module -e 'import \"css-functions-list\";'",

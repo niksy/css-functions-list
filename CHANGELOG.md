@@ -2,18 +2,24 @@
 
 ## [Unreleased][]
 
+### Fixed
+
+- Properly copy JSON file to distribution directory
+
 ## [3.3.1][] - 2026-02-10
+
+### Fixed
 
 - Fix JSON file reference
 
 ## [3.3.0][] - 2026-02-10
 
-## Added
+### Added
 
 - Update function list with latest additions
   ([#12](https://github.com/niksy/css-functions-list/pull/12))
 
-## Changed
+### Changed
 
 - Upgrade package internals
 
