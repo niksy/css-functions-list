@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+- Fix JSON file reference
+
 ## [3.3.0][] - 2026-02-10
 
 ## Added

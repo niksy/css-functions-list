@@ -12,7 +12,7 @@
       "require": "./dist/index.cjs"
     },
     "./index.json": {
-      "import": "./esm/index.json"
+      "import": "./dist/index.json"
     },
     "./package.json": "./package.json"
   },
@@ -28,7 +28,7 @@
   ],
   "scripts": {
     "build": "rolldown --config rolldown.config.js",
-    "generate-list": "node generate-list.js",
+    "generate-list": "node generate-list.js && cp index.json dist/index.json",
     "lint": "eslint '{index,lib/**/*,test/**/*,generate-list}.{js,cjs}'",
     "lint:types": "tsc",
     "module-check": "node -e 'require(\"css-functions-list\");' && node --input-type=module -e 'import \"css-functions-list\";'",
