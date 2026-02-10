@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+## [3.3.2][] - 2026-02-10
+
 ### Fixed
 
 - Properly copy JSON file to distribution directory
@@ -84,7 +86,8 @@
 [3.0.0]: https://github.com/niksy/css-functions-list/tree/v3.0.0
 [3.0.1]: https://github.com/niksy/css-functions-list/tree/v3.0.1
 [3.1.0]: https://github.com/niksy/css-functions-list/tree/v3.1.0
-[Unreleased]: https://github.com/niksy/css-functions-list/compare/v3.3.1...HEAD
+[Unreleased]: https://github.com/niksy/css-functions-list/compare/v3.3.2...HEAD
+[3.3.2]: https://github.com/niksy/css-functions-list/compare/v3.3.1...v3.3.2
 [3.3.1]: https://github.com/niksy/css-functions-list/compare/v3.3.0...v3.3.1
 [3.3.0]: https://github.com/niksy/css-functions-list/compare/v3.2.3...v3.3.0
 [3.2.3]: https://github.com/niksy/css-functions-list/compare/v3.2.2...v3.2.3
